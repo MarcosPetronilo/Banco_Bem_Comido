@@ -1,0 +1,115 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.example:smart-glyco-scan-backend >----------------
+[INFO] Building smart-glyco-scan-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.5:run (default-cli) > test-compile @ smart-glyco-scan-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ smart-glyco-scan-backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ smart-glyco-scan-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ smart-glyco-scan-backend ---
+[INFO] skip non existing resourceDirectory /Users/carlos/Documents/Smart Sensor Design/smart-glyco-scan--backend/smart-glyco-scan-backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ smart-glyco-scan-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.3.5:run (default-cli) < test-compile @ smart-glyco-scan-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.5:run (default-cli) @ smart-glyco-scan-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-10-01T11:27:59.775-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] c.e.s.SmartGlycoScanBackendApplication   : Starting SmartGlycoScanBackendApplication using Java 21.0.7 with PID 75595 (/Users/carlos/Documents/Smart Sensor Design/smart-glyco-scan--backend/smart-glyco-scan-backend/target/classes started by carlos in /Users/carlos/Documents/Smart Sensor Design/smart-glyco-scan--backend/smart-glyco-scan-backend)
+2025-10-01T11:27:59.776-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] c.e.s.SmartGlycoScanBackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-01T11:28:00.078-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-01T11:28:00.078-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-01T11:28:00.092-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.smart_glyco_scan.repository.PasswordResetTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-01T11:28:00.092-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.smart_glyco_scan.repository.UsuarioRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-01T11:28:00.092-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2025-10-01T11:28:00.097-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-01T11:28:00.098-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-01T11:28:00.109-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2025-10-01T11:28:00.426-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-01T11:28:00.433-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-01T11:28:00.433-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-10-01T11:28:00.469-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-01T11:28:00.469-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 676 ms
+2025-10-01T11:28:00.504-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-01T11:28:00.713-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@679d0be8
+2025-10-01T11:28:00.714-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-01T11:28:00.784-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-01T11:28:00.823-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-10-01T11:28:00.844-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-01T11:28:00.993-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-01T11:28:01.439-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-01T11:28:01.506-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01T11:28:01.800-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-10-01T11:28:01.800-03:00  WARN 75595 --- [smart-glyco-scan-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-10-01T11:28:02.173-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-01T11:28:02.186-03:00  INFO 75595 --- [smart-glyco-scan-backend] [           main] c.e.s.SmartGlycoScanBackendApplication   : Started SmartGlycoScanBackendApplication in 2.557 seconds (process running for 2.723)
+2025-10-01T11:28:17.238-03:00  INFO 75595 --- [smart-glyco-scan-backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-01T11:28:17.239-03:00  INFO 75595 --- [smart-glyco-scan-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-01T11:28:17.241-03:00  INFO 75595 --- [smart-glyco-scan-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+Hibernate: select u1_0.id from usuarios u1_0 where u1_0.email=? limit ?
+Hibernate: select u1_0.id from usuarios u1_0 where u1_0.telefone=? limit ?
+Hibernate: insert into usuarios (email,password,telefone,username) values (?,?,?,?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: insert into password_reset_tokens (created_at,expires_at,token_hash,token_type,used_at,usuario_id) values (?,?,?,?,?,?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: insert into password_reset_tokens (created_at,expires_at,token_hash,token_type,used_at,usuario_id) values (?,?,?,?,?,?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: insert into password_reset_tokens (created_at,expires_at,token_hash,token_type,used_at,usuario_id) values (?,?,?,?,?,?)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password,u1_0.telefone,u1_0.username from usuarios u1_0 where u1_0.email=?
+Hibernate: select prt1_0.id,prt1_0.created_at,prt1_0.expires_at,prt1_0.token_hash,prt1_0.token_type,prt1_0.used_at,prt1_0.usuario_id from password_reset_tokens prt1_0 where prt1_0.usuario_id=? and prt1_0.token_hash=? and prt1_0.used_at is null order by prt1_0.created_at desc limit ?
+2025-10-01T11:38:03.214-03:00  WARN 75595 --- [smart-glyco-scan-backend] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.example.smart_glyco_scan.controller.AuthController.registerUser(com.example.smart_glyco_scan.controller.AuthController$RegisterRequest) with 4 errors: [Field error in object 'registerRequest' on field 'email': rejected value [email-invalido]; codes [Email.registerRequest.email,Email.email,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@12ba22d8,.*]; default message [Email inválido]] [Field error in object 'registerRequest' on field 'telefone': rejected value [123]; codes [Pattern.registerRequest.telefone,Pattern.telefone,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.telefone,telefone]; arguments []; default message [telefone],[Ljakarta.validation.constraints.Pattern$Flag;@22c34de2,^\+?[0-9]{10,15}$]; default message [Telefone deve conter apenas dígitos (10-15) e opcional + no início]] [Field error in object 'registerRequest' on field 'username': rejected value []; codes [NotBlank.registerRequest.username,NotBlank.username,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.username,username]; arguments []; default message [username]]; default message [Username é obrigatório]] [Field error in object 'registerRequest' on field 'password': rejected value []; codes [NotBlank.registerRequest.password,NotBlank.password,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.password,password]; arguments []; default message [password]]; default message [Password é obrigatório]] ]
+2025-10-01T11:38:09.667-03:00  WARN 75595 --- [smart-glyco-scan-backend] [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.example.smart_glyco_scan.controller.AuthController.loginUser(com.example.smart_glyco_scan.controller.AuthController$LoginRequest) with 2 errors: [Field error in object 'loginRequest' on field 'password': rejected value []; codes [NotBlank.loginRequest.password,NotBlank.password,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginRequest.password,password]; arguments []; default message [password]]; default message [Password é obrigatório]] [Field error in object 'loginRequest' on field 'email': rejected value [email-invalido]; codes [Email.loginRequest.email,Email.email,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginRequest.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@12ba22d8,.*]; default message [Email inválido]] ]
+2025-10-01T12:01:02.753-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s764ms).
+2025-10-01T12:18:31.885-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s109ms).
+2025-10-01T12:34:31.039-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s140ms).
+2025-10-01T12:51:00.344-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s292ms).
+2025-10-01T13:06:59.652-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s295ms).
+2025-10-01T13:22:29.476-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s824ms).
+2025-10-01T13:38:29.035-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s381ms).
+2025-10-01T13:45:49.608-03:00  WARN 75595 --- [smart-glyco-scan-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m50s548ms).
+2025-10-01T14:12:49.149-03:00  INFO 75595 --- [smart-glyco-scan-backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01T14:12:49.269-03:00  INFO 75595 --- [smart-glyco-scan-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-01T14:12:49.399-03:00  INFO 75595 --- [smart-glyco-scan-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:44 h
+[INFO] Finished at: 2025-10-01T14:12:49-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.3.5:run (default-cli) on project smart-glyco-scan-backend: Process terminated with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
