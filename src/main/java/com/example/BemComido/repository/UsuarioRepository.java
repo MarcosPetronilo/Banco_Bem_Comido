@@ -1,6 +1,7 @@
 package com.example.BemComido.repository;
 
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     Optional<Usuario> findByUsername(String username);
     Optional<Usuario> findByEmail(String email);
+    List<Usuario> findByUsernameContainingIgnoreCase(String username);
     boolean existsByUsername(String username);
     boolean existsByEmail(String email);
     boolean existsByTelefone(String telefone);

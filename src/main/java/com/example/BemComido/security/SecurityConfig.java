@@ -9,6 +9,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -52,6 +53,9 @@ public class SecurityConfig {
                     "/auth/verify-code",
                     "/auth/update-password"
                 ).permitAll()
+                .requestMatchers(HttpMethod.GET, "/users/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/recipes/**").permitAll()
+                    .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             )
             .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -63,13 +67,13 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Configuração específica para desenvolvimento - ajuste para produção
-    configuration.setAllowedOrigins(java.util.List.of("http://localhost:4200", "http://localhost:19006"));
+        // Desenvolvimento: permitir qualquer origem (inclui Thunder Client, Postman, etc.)
+        // Atenção: restrinja em produção para domínios específicos.
+        configuration.setAllowedOriginPatterns(java.util.List.of("*"));
         configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(java.util.List.of("*"));
-    // Não expõe Set-Cookie e não permite credenciais para evitar uso de cookies
-    configuration.setExposedHeaders(java.util.List.of("Authorization", "Content-Disposition"));
-    configuration.setAllowCredentials(false);
+        configuration.setExposedHeaders(java.util.List.of("Authorization", "Content-Disposition"));
+        configuration.setAllowCredentials(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

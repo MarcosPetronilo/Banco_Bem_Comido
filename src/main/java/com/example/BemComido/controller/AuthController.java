@@ -111,20 +111,68 @@ public class AuthController {
         return ResponseEntity.ok(novoAdmin);
     }
 
+    // Promover usuário existente a ADMIN (restrito a ADMIN)
+    @PostMapping("/promote")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> promoteUser(@RequestBody Map<String, String> body) {
+        String identifier = null;
+        if (body != null) {
+            String u = body.get("username");
+            String e = body.get("email");
+            if (u != null && !u.isBlank()) identifier = u.trim();
+            else if (e != null && !e.isBlank()) identifier = e.trim();
+        }
+        if (identifier == null || identifier.isBlank()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Informe username ou email"));
+        }
+        try {
+            Usuario adminizado = usuarioService.promoverParaAdmin(identifier);
+            return ResponseEntity.ok(Map.of(
+                "id", adminizado.getId(),
+                "username", adminizado.getUsername(),
+                "email", adminizado.getEmail(),
+                "role", adminizado.getRole().name()
+            ));
+        } catch (IllegalArgumentException ex) {
+            return ResponseEntity.status(404).body(Map.of("error", ex.getMessage()));
+        }
+    }
+
     public static class LoginRequest {
-        @NotBlank(message = "Username é obrigatório")
+        // Enviando username OU email
         public String username;
+        @Email(message = "Email inválido")
+        public String email;
         @NotBlank(message = "Password é obrigatório")
         public String password;
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequest request) {
-        Optional<Usuario> usuario = usuarioService.buscarPorUsername(request.username);
+        String username = request.username != null ? request.username.trim() : null;
+        String email = request.email != null ? request.email.trim() : null;
+
+        if ((username == null || username.isBlank()) && (email == null || email.isBlank())) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Envie username ou email, além de password"));
+        }
+
+        Optional<Usuario> usuario = Optional.empty();
+        if (username != null && !username.isBlank()) {
+            usuario = usuarioService.buscarPorUsername(username);
+            if (usuario.isEmpty()) {
+                usuario = usuarioService.buscarPorEmail(username);
+            }
+        }
+        if (usuario.isEmpty() && email != null && !email.isBlank()) {
+            usuario = usuarioService.buscarPorEmail(email);
+        }
+
         if (usuario.isPresent() && passwordEncoder.matches(request.password, usuario.get().getPassword())) {
-            // subject será o username; adiciona claim simples com role
             String role = usuario.get().getRole() != null ? usuario.get().getRole().name() : "USER";
-            String token = jwtService.generateToken(usuario.get().getUsername(), Map.of("role", role), 24 * 60 * 60 * 1000L); // 24 horas
+            String subject = (usuario.get().getUsername() != null && !usuario.get().getUsername().isBlank())
+                    ? usuario.get().getUsername()
+                    : usuario.get().getEmail();
+            String token = jwtService.generateToken(subject, Map.of("role", role), 24 * 60 * 60 * 1000L); // 24 horas
             return ResponseEntity.ok(Map.of("token", token, "role", role));
         }
         return ResponseEntity.status(401).body("Credenciais inválidas");

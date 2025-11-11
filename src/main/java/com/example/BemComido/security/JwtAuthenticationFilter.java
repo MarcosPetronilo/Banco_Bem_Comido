@@ -46,9 +46,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String jwt = authHeader.substring(7);
         try {
             var parsed = jwtService.parse(jwt);
-            final String subject = parsed.getBody().getSubject(); // usamos username como subject
+            final String subject = parsed.getBody().getSubject(); // subject pode ser username OU email
             if (subject != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 Optional<Usuario> userOpt = usuarioRepository.findByUsername(subject);
+                if (userOpt.isEmpty()) {
+                    userOpt = usuarioRepository.findByEmail(subject);
+                }
                 if (userOpt.isPresent() && jwtService.isTokenValid(jwt, subject)) {
                     Usuario user = userOpt.get();
                     String roleName = user.getRole() != null ? user.getRole().name() : "USER";
@@ -57,7 +60,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     }
                     var authorities = java.util.List.of(new SimpleGrantedAuthority(roleName));
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        user.getUsername(), null, authorities
+                        (user.getUsername() != null && !user.getUsername().isBlank()) ? user.getUsername() : user.getEmail(), null, authorities
                     );
                     authToken.setDetails(user);
                     SecurityContextHolder.getContext().setAuthentication(authToken);
