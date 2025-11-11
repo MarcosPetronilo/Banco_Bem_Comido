@@ -43,10 +43,11 @@ public class PasswordResetService {
         usuario.setResetPasswordTokenExpires(LocalDateTime.now().plusMinutes(15));
         usuarioRepository.save(usuario);
 
-        String subject = "Seu código de recuperação";
-        String body = "Olá,\n\nSeu código de verificação é: " + code + "\n" +
-                "Ele expira em 15 minutos.\n\nSe não foi você, ignore este e-mail.\n\nEquipe Smart Glyco Scan";
-        String from = System.getProperty("spring.mail.from");
+    String subject = "Recuperação de Senha";
+    String body = "Olá,\n\nSeu código de verificação é: " + code + "\n" +
+        "Ele expira em 15 minutos.\n\nSe não foi você, ignore este e-mail.\n\nEquipe Bem Comido";
+    // Força remetente padrão solicitado
+    String from = "ra122785@uem.br";
         try {
             emailService.sendPlainText(usuario.getEmail(), subject, body, from);
         } catch (Exception ex) {
